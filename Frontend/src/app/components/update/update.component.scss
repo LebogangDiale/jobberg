@@ -1,0 +1,56 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  
+  .user-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    overflow: hidden;
+    box-shadow: 0px 0px 4px 0px #2d3238;
+    border: 4px solid #fff;
+    margin: 0 auto;
+    margin-top: -60px;
+    position: relative;
+    z-index: 999;
+  }
+  
+  .savephoto {
+    background-color: #7e91bc;
+    color: #fefefe;
+  }
+  
+  .info_ {
+    border-style: none;
+  }
+  
+  .collection {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-style: none;
+  }
+  
+  .user_bio {
+    background: #fefefe;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    height: 180px;
+    width: 100%;
+  }
+  
+
+  .bg-primar
+  {
+    background: #7e91bc;
+  }
+
+  

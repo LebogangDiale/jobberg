@@ -1,0 +1,210 @@
+<div class="container mt-5">
+    <form>
+        <!-- <input type="button" value="Go back!" onclick="history.back()"> -->
+        <!-- <i class="fa-solid fa-arrow-left"></i> -->
+        <!-- <i class="fa-solid fa-arrow-left"></i> -->
+        <a onclick="history.back()" class="bi bi-arrow-left-circle"></a>
+        <!-- <i class="bi bi-arrow-left-circle"></i> -->
+    </form>
+
+    <div class="row mt-5">
+        <!-- Name and descrption -->
+        <div class="row">
+            <div class="col-lg-6 col-sm-12 px-2">
+                <div class="col-md-4 pt-2 ">
+                  <img class="img-fluid rounded-circle" width="200" height="200" src="" alt=""
+                    data-toggle="modal" data-target=".bd-example-modal-xl">
+          
+          
+                  <!-- modal to profile pic -->
+                  <!-- This secion allows the user to click on the candidate profile picture to view their video resume-->
+                  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+          
+          
+                        <!-- video resume -->
+                        <video src="" controls controlsList="nodownload">
+                          Your browser does not support the video tag.
+                        </video>
+                        <!-- end of video -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /end of modal for profile pic -->
+                </div>
+                <div class="">
+                  <div class="card-body">
+                    <h4 class="card-title">name</h4>
+                    <h6 class="card-text">Qualification: </h6>
+                    <p class="card-text"> Location </p>
+          
+                    <!-- Send message Modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                      data-whatever="@mdo">Send message</button>
+          
+          
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                <input type="text" class="form-control" id="recipient-name">
+                              </div>
+                              <div class="form-group">
+                                <label for="message-text" class="col-form-label">Message:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Send message</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /end of send message Modal -->
+                  </div>
+          
+                </div>
+              </div>
+
+            <div class="col-5">
+
+                <div class="form-group">
+                    <!-- <h5><label for="inputMessage">Message</label></h5> -->
+                    <textarea name="career[message]" class="form-control" tabindex="4" placeholder="Write your details"
+                        required></textarea>
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary btn-block" tabindex="5">Submit</button>
+            </div>
+        </div>
+
+        <!-- Interest and experience -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-4">
+                    <div class="title">
+                        <h2>intrests</h2>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <!-- <h5 class="card-title title"><i class="bi bi-controller title">games</i></h5> -->
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="title">
+                        <h2>Experience</h2>
+                    </div>
+
+                    <div class="card mt-3">
+
+                        <div class="card-body">
+
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="containerX">
+                                            <div class="text1">
+                                                <h6>qualification name</h6>
+                                            </div>
+
+                                            <div class="text-middle">
+                                                <h6> - </h6>
+                                            </div>
+
+                                            <div class="text2">
+                                                <h6>institution name</h6>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <p>2022-12-10</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container mt-4">
+
+            <div class="row">
+
+                <div class="col-6">
+                    <div class="title">
+                        <h2>tools </h2>
+                    </div>
+                    <div class="card">
+                        <div class="containerX">
+                            <div class="text1">
+                                <h5>Paris is one of</h5>
+                            </div>
+
+                            <div class="text2">
+                                <div class="mt-1 mb-1">
+                                    Skill-level
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-6">
+
+                    <div class="title">
+                        <h2>Education</h2>
+                    </div>
+
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-9">
+                                <div class="containerX mt-2">
+                                    <div class="text1">
+                                        <h6>qualification name</h6>
+                                    </div>
+
+                                    <div class="text-middle">
+                                        <h6> - </h6>
+                                    </div>
+
+                                    <div class="text2">
+                                        <h6>institution name</h6>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <p>2022-12-10</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>

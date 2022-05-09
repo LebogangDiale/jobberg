@@ -1,0 +1,101 @@
+.number
+{
+    text-align: left;
+}
+
+.card1
+{
+    //background-image:(url("../../../assets/"));
+}
+
+
+.welcome_admin{
+
+font-family: 'Arimo';
+font-style: normal;
+font-weight: 400;
+
+line-height: 40px;
+/* identical to box height */
+
+text-align: center;
+
+color: #1E2126;
+}
+
+.title_table{
+    font-family: 'Arvo';
+font-style: normal;
+font-weight: 400;
+
+line-height: 40px;
+/* identical to box height */
+
+text-align: center;
+
+color: #1E2126;
+}
+
+
+.details{
+    color: #2D3238;
+    background-color: #fefefe;
+    background: rgba(254, 254, 254, 0.8);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    border-style: none;
+}
+
+.VIEW_BUTTON{
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 700;
+    /* identical to box height */
+    color: #7E91BC;
+    border-style: none;
+}
+
+.VIEW_BUTTON:hover{
+    color: #fefefe;
+    background-color: #7E91BC;
+}
+.VIEW_BUTTON1{
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 700;
+    /* identical to box height */
+    color: #7E91BC;
+  
+}
+
+.VIEW_BUTTON1:hover{
+    color: #fefefe;
+    background-color: #7E91BC;
+}
+
+
+.header{
+    background-color: #7E91BC;
+    color: #fefefe;
+    
+}
+.header1{
+    background-color: #fefefe;
+    padding-bottom: 16px;
+   
+    
+}
+
+
+.table{
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 32px 0px;
+}
+
+.table_div{
+    height: 65px;
+    background-color: #fefefe;
+    padding: 1rem;
+}

@@ -1,0 +1,231 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <form class="justify-content-center pl-4 mt-4">
+                <a onclick=history.back() class="bi bi-arrow-left-circle m-auto" style="width:12px height=12px"></a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="cover-container mt-4 h-100 mb-3">
+    <section class="">
+        <div class="text-center col-sm-12 ">
+            <div class="row">
+
+                <h2 class="d-inline-block intro">Register profile</h2>
+            </div>
+            <p>Now! Let's get to know each other better. </p>
+        </div>
+    </section>
+
+
+
+
+
+</div>
+
+<div class="container justify-content-center">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12 text-center">
+            <div class=" register card-body">
+
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <div class="form-group card2-body">
+                        <input type="email" class="form-control" formControlName="email" id="inputAddress"
+                            placeholder="enter email">
+                    </div>
+                    <div *ngIf="Form['email'].touched && Form['email'].invalid" class="alert alert-danger">
+                        <div *ngIf="Form['email'].errors && Form['email'].errors['required']">Email is required.</div>
+                        <div *ngIf="Form['email'].errors && Form['email'].errors['email']">Please, enter valid email
+                            address.</div>
+                    </div>
+
+                    <div class="form-group card2-body">
+                        <input type="text" class="form-control" formControlName="first_name" id="inputAddress"
+                            placeholder="enter name">
+                    </div>
+                    <div *ngIf="Form['first_name'].touched && Form['first_name'].invalid" class="alert alert-danger">
+                        <div *ngIf="Form['first_name'].errors && Form['first_name'].errors['required']">Firstname is
+                            required.</div>
+                        <div *ngIf="Form['first_name'].errors && Form['first_name'].errors['first_name']">Please, enter
+                            valid firstname.</div>
+                    </div>
+
+
+                    <div class="form-group card2-body">
+                        <input type="text" class="form-control" formControlName="last_name" id="inputAddress"
+                            placeholder="enter surname">
+                    </div>
+                    <div *ngIf="Form['last_name'].touched && Form['last_name'].invalid" class="alert alert-danger">
+                        <div *ngIf="Form['last_name'].errors && Form['last_name'].errors['required']">Surname is
+                            required.</div>
+                        <div *ngIf="Form['last_name'].errors && Form['last_name'].errors['last_name']">Please, enter
+                            valid surname.</div>
+                    </div>
+
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+                            <div class="input-group mb-3">
+
+                                <select class="custom-select " id="inputGroupSelect01" formControlName="highestQual"
+                                    placeholder="Select Your Highest Qualification">
+                                    <option value="" selected disabled hidden>Select Your Highest Qualification</option>
+                                    <option value="Grade 9">Grade 9</option>
+                                    <option value="Grade 10 and National (vocational) Certificates level 2">Grade 10 and
+                                        National (vocational) Certificates level 2</option>
+                                    <option value="Grade 11 and National (vocational) Certificates level 3">Grade 11 and
+                                        National (vocational) Certificates level 3</option>
+                                    <option value="Grade 12 (National Senior Certificate) and National (vocational) Cert.
+                                    level 4">Grade 12 (National Senior Certificate) and National (vocational) Cert.
+                                        level 4</option>
+                                    <option value="Higher Certificates and Advanced National (vocational) Cert.">Higher
+                                        Certificates and Advanced National (vocational) Cert.</option>
+                                    <option value="National Diploma">National Diploma</option>
+                                    <option value="Advanced certificate">Advanced certificate</option>
+                                    <option
+                                        value="Bachelor's degree, Advanced Diplomas, Post Graduate Certificate and B-tech">
+                                        Bachelor's degree, Advanced Diplomas, Post Graduate Certificate and B-tech
+                                    </option>
+                                    <option
+                                        value="Honours degree, Post Graduate diploma and Professional Qualifications">
+                                        Honours degree, Post Graduate diploma and Professional Qualifications
+                                    </option>
+                                    <option value="Master's degree">Master's degree</option>
+                                    <option value="Doctor's degree">Doctor's degree</option>
+
+                                </select>
+                            </div>
+                            <div *ngIf="Form['highestQual'].touched && Form['highestQual'].invalid"
+                                class="alert alert-danger">
+                                <div *ngIf="Form['highestQual'].errors && Form['highestQual'].errors['required']">
+                                    Highest qualification is required.</div>
+                                <div *ngIf="Form['highestQual'].errors && Form['highestQual'].errors['highestQual']">
+                                    Please, enter valid qualification.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group mb-3 card2-body">
+                                <div class="custom-file ">
+                                    <input type="file" class="custom-file-input" id="videoResume"
+                                        aria-describedby="inputGroupFileAddon01" formControlName="videoResume"
+                                        id="videoResume" (change)="onVideoChange($event)" accept=".mp4">
+                                    <label class="custom-file-label" for="inputGroupFile01">Upload your video resume
+                                    </label>
+
+
+                                </div>
+                            </div>
+                            <div *ngIf="Form['videoResume'].touched && Form['videoResume'].invalid"
+                                class="alert alert-danger">
+                                <div *ngIf="Form['videoResume'].errors && Form['videoResume'].errors['required']">Video
+                                    is required.</div>
+                                <div *ngIf="Form['videoResume'].errors && Form['videoResume'].errors['videoResume']">
+                                    Please, select a valid mp4 file.</div>
+                            </div>
+                        </div>
+
+                        <!-- second imputs -->
+
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Upload your certificate (PDF only)</label>
+                            <div class="input-group mb-3 card2-body">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                        aria-describedby="inputGroupFileAddon01" formControlName="highestCertificate"
+                                        id="highestCertificate" (change)="onCertificateDocChange($event)" accept=".pdf">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </div>
+                            <div *ngIf="Form['highestCertificate'].touched && Form['highestCertificate'].invalid"
+                                class="alert alert-danger">
+                                <div
+                                    *ngIf="Form['highestCertificate'].errors && Form['highestCertificate'].errors['required']">
+                                    Certificate is required.</div>
+                                <div
+                                    *ngIf="Form['highestCertificate'].errors && Form['highestCertificate'].errors['highestCertificate']">
+                                    Please, select a valid pdf document.</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="inputPassword4" class="form-label">Upload your resume (PDF only)</label>
+                            <div class="input-group mb-3 card2-body">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input"
+                                        aria-describedby="inputGroupFileAddon01" formControlName="resume" id="resume"
+                                        (change)="onResumeDocChange($event)" accept=".pdf">
+                                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                </div>
+                            </div>
+                            <div *ngIf="Form['resume'].touched && Form['resume'].invalid" class="alert alert-danger">
+                                <div *ngIf="Form['resume'].errors && Form['resume'].errors['required']">Resume is
+                                    required.</div>
+                                <div *ngIf="Form['resume'].errors && Form['resume'].errors['resume']">Please, select a
+                                    valid pdf document.</div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="container d-flex justify-content-center">
+                        <div class="row">
+                            <div class="col">
+                                <div class=" form-check mb-4 mt-3">
+                                    <div class="input-group mb-3">
+    
+                                        <select class="custom-select " id="inputGroupSelect01" formControlName="culture"
+                                            placeholder="Select a company culture">
+                                            <option value="" selected disabled hidden>Select a company culture</option>
+                                            <option value="Adhocracy culture">Adhocracy culture</option>
+                                            <option value="Clan culture">Clan culture</option>
+                                            <option value="Customer-focused culture">Customer-focused culture</option>
+                                            <option value="Hierarchy culture">Hierarchy culture</option>
+                                        </select>
+    
+                                    </div>
+                                    <span>
+    
+                                    </span>
+    
+    
+                                    <div class="form-check form-check-inline d-flex justify-content-center">
+                                        <input class="form-check-input" type="radio" name="checkbox" id="inlineRadio1"
+                                            value="checkbox" formControlName="checkbox">
+                                        <label class="form-check-label text-center" for="inlineRadio1">Agree to Terms and
+                                            Conditions</label>
+                                    </div>
+                                    <div *ngIf="Form['checkbox'].touched && Form['checkbox'].invalid"
+                                        class="alert alert-danger">
+                                        <div *ngIf="Form['checkbox'].errors && Form['checkbox'].errors['required']">checkbox
+                                            has to be selected in order to submit form.</div>
+                                        <div *ngIf="Form['checkbox'].errors && Form['checkbox'].errors['checkbox']">Please,
+                                            select the checkbox.</div>
+                                    </div>
+                                    <button [disabled]="registerForm.invalid" type="submit"
+                                        class="btn continue-btn btn-primary mt-3 d-flex justify-content-center">Continue</button>
+                                    <br>
+                                    <div *ngIf="spinnerState" class="d-flex justify-content-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

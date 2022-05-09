@@ -1,0 +1,326 @@
+<app-navbar></app-navbar>
+
+<body>
+
+
+   <section class="jobberghero first">
+      <div class=" container mb-2 mt-1">
+         <div class="row text-center">
+            <div class="col-md-12">
+               <div class="wrap">
+                  <h1 class="jobbergtitle">
+                     Find the perfect culture fit
+                     <br>for your company
+                  </h1>
+                  <div class="jobbergsearch mt-5">
+
+                     <form [formGroup]="formSearch">
+                        <input type="text" class="searchTerm" formControlName="search"
+                           placeholder="who are you looking for?" name="name" type="text"
+                           placeholder="search candidates..." [(ngModel)]="filterTerm" aria-label="Search">
+                        <br>
+                        <button type="submit" class="searchButton mt-3" (click)="search()" routerLink="/results"
+                           aria-label="Search">
+                           Search
+                        </button>
+                     </form>
+
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <div class="color-overlay h-100">
+      <main class="container-md main-content d-flex align-items-center h-100">
+         <div class="row">
+            <header class="col-md-12 text-center mb-3">
+               <h2 class="buildtitle mb-3 ">
+                  Build the team you actually want to work with.
+               </h2>
+               <p>The business solution created both for recruiters and teams.<br> Where recruiters reimage
+                  collaboration
+                  and find people they actually want to work with.</p>
+            </header>
+            <section class="col-12 mb-2 text-right">
+               <a class="button  text-uppercase mt-5" routerLink="recruiter" >Join
+                  Jobberg</a>
+            </section>
+         </div>
+      </main>
+   </div>
+
+
+
+   <section class="services mt-5">
+      <div class="container">
+         <div class="row text-center">
+            <div class="col">
+               <h4 class="title text-uppercase font-weight-semibold mb-3">
+                  Browse Top Candidates
+               </h4>
+
+            </div>
+         </div>
+
+         <div class="row text-center">
+            <!-- <div class="col-md-4 mb-3">
+               <div class="our-card">
+                  <img src="https://picsum.photos/100.jpg" alt="">
+                  <h3 class="candidatename py-3">{{user.name}}</h3>
+                  <p>{{user.description}}</p>
+                  <button class="viewmore text-uppercase">view profile</button>
+
+               </div>
+
+            </div>
+            <div class="col-md-4 mb-3" *ngFor="let user of candidateProfiles">
+               <div class="our-card">
+                  <img src="https://picsum.photos/100.jpg" alt="">
+                  <h3 class="candidatename py-3">{{user.name}}</h3>
+                  <p>{{user.description}}</p>
+                  <button class="viewmore  text-uppercase">view profile</button>
+
+               </div>
+            </div>
+            <div class="col-md-4 col-sm-2 mb-3" *ngFor="let user of mockdata3">
+               <div class="our-card">
+                  <img src="https://picsum.photos/100.jpg" alt="">
+                  <h3 class="candidatename py-3">{{user.name}}</h3>
+                  <p>{{user.description}}</p>
+                  <button class="viewmore  text-uppercase">view profile</button>
+
+               </div>
+
+            </div>
+
+
+            <div class="col-md-4 mb-3" *ngFor="let user of mockdata4">
+               <div class="our-card">
+                  <img src="https://picsum.photos/100.jpg" alt="">
+                  <h3 class="candidatename py-3">{{user.name}}</h3>
+                  <p>{{user.description}}</p>
+                  <button class="viewmore  text-uppercase">view profile</button>
+
+               </div>
+
+            </div>
+            <div class="col-md-4 mb-3" *ngFor="let user of mockdata5">
+               <div class="our-card">
+                  <img src="https://picsum.photos/100.jpg" alt="">
+                  <h3 class="candidatename py-3">{{user.name}}</h3>
+                  <p>{{user.description}}</p>
+                  <button class="viewmore  text-uppercase">view profile</button>
+
+               </div>
+            </div>
+            <div class="col-md-4 mb-3" *ngFor="let user of mockdata6">
+               <div class="our-card">
+                  <img src="https://picsum.photos/100.jpg" alt="">
+                  <h3 class="candidatename py-3">{{user.name}}</h3>
+                  <p class="candidatedescription mb-2">{{user.description}}</p>
+                  <button class="viewmore text-uppercase">view profile</button>
+
+               </div>
+
+            </div> -->
+
+            <!-- <div class="col-md-4 mb-5" *ngFor="let user of candidateProfiles">
+               <div class="our-card">
+                  <img src="{{user.profile_pic}}" alt="" width="64" height="64" class="useravatar flex-shrink-0">
+                  <h2 class="candidatename mt-3">{{user.first_name}} {{user.last_name}}</h2>
+                  <p class="candidatedescription mb-1 font-weight-bold">{{user.city}}, {{user.province}}</p>
+                  <p class="candidatedescription mb-2">{{user.email}}</p>
+                  <button class="viewmore text-uppercase">view profile</button>
+
+
+               </div>
+
+            </div> -->
+            <div class="container">
+               <div class="row text-center justify-content-between">
+                  <div class="content__responce">
+
+                
+
+                  <div class="candidateshowdescription col-md-4 mb-3" *ngFor="let user of candidateProfiles.slice(0,3)"
+                     routerLink="/candidate/{{user.fk_candidate_id}}">
+
+
+                     <div class="topcandidate card">
+                        <img src="{{user.profile_pic}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                           <h5 class="card-title">{{user.first_name | titlecase }} {{user.last_name | titlecase}}</h5>
+                           <p class="card-text">{{ user.job_title | titlecase }}</p>
+                           <button class="viewmore text-uppercase">view profile</button>
+                        </div>
+                        <div class="overlay">
+                           <div class="overlay_text">{{user.bio}}</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </div>
+
+            </div>
+            <!-- </section> -->
+
+            <section class="services">
+               <div class="container">
+                  <div class="row text-center">
+                     <div class="col-md-12">
+
+                        <h1 class="articleblog title m-4">
+                           Four common types of work culture
+                        </h1>
+                        <p class="blogsubtitle text mb-3">Find out what recruiters are looking for in building teams.
+                           <br> The
+                           type of
+                           environment that like and how you can use highlight yourself for fitting in these categories.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="row">
+
+
+
+
+                     <div class="articlecardleft col-md-6 text-center my-5">
+                        <h4>Adhocracy culture</h4>
+                        <br>
+                        <p> The name of this type of culture comes from the word “ad-hoc”, which describes this culture
+                           type’s
+                           tendency to take risks in order to innovate and move quickly.
+                           Most start-up and tech companies have this type of culture so they can create without too
+                           many
+                           barriers and be the first to market.
+                           This type of culture is usually high-energy and agile. Silicon Valley companies like
+                           Facebook, Google,
+                           etc. tend to have Adhocracy cultures.
+                        </p>
+
+
+                     </div>
+
+
+
+                     <div class="articlecard col-md-6 text-center my-5 ">
+                        <h4>Clan culture</h4>
+                        <br>
+                        <p>Think new, young companies or small, family-owned companies.
+                           The name “clan culture” comes from the “clan” mentality of these cultures, where everyone
+                           thinks and
+                           feels similarly, and are working toward a common goal.
+                           Employees are a top priority, and there’s a large focus on collaboration and teamwork. Clan
+                           cultures
+                           foster fierce loyalty and a strong company identity. They are likely to use open and informal
+                           communication. What you won’t find here is a high number of management levels, as employees
+                           are seen
+                           as peers and family.
+                           Tom’s of Maine, Chobani, and Redmond (Real Salt) have clan cultures</p>
+
+
+                     </div>
+
+
+
+                     <div class="articlecardleft col-md-6 text-center my-5">
+                        <h4>Customer-focused culture</h4>
+                        <br>
+                        <p>Southwest, Zappos, Nordstrom. Customer-focused cultures put customers first and empower their
+                           employees to do the same.
+                           These types of cultures often make the news for their exceptional customer service and
+                           loyalty.</p>
+
+
+
+                     </div>
+
+                     <div class="articlecard col-md-6 text-center my-5">
+                        <h4>Hierarchy culture</h4>
+                        <br>
+                        <p>Hierarchy cultures are the traditional, paternalistic types of cultures. As the name
+                           suggests,
+                           leadership hierarchy, power, and processes are important.
+                           These types of cultures can be risk-adverse and focus on preventing mistakes, sticking to
+                           rules and
+                           tradition,
+                           and managing failure. High-risk organisations like those in the oil and gas, finance,
+                           healthcare,
+                           and government industries often have hierarchy cultures..</p>
+
+
+
+                     </div>
+
+
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <div class="col">
+
+
+               <section class="form py-3 bg-dark mt-3">
+                  <!--  -->
+                  <form [formGroup]="sendMailForm" (ngSubmit)="sendMail()">
+                     <div class="container">
+                        <div class="row text-center">
+                           <div class="col">
+                              <h1 class="contactus title-form">
+                                 Feel free to contact us!
+                              </h1>
+
+                           </div>
+
+                        </div>
+
+
+                        <div class="row text-center mt-3">
+                           <div class="col-md-5 offset-md-1 mb-3"> <input type="text" placeholder="name"
+                                 formControlName="name">
+                              <div *ngIf="Form['name'].touched && Form['name'].invalid" class="alert alert-danger">
+                                 <div *ngIf="Form['name'].errors && Form['name'].errors['required']"><small>name is
+                                       required.</small></div>
+                                 <div *ngIf="Form['name'].errors && Form['name'].errors['name']"><small> enter valid
+                                       name.</small>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-5 "><input type="email" placeholder=" email" formControlName="email">
+                              <div *ngIf="Form['email'].touched && Form['email'].invalid" class="alert alert-danger">
+                                 <div *ngIf="Form['email'].errors && Form['email'].errors['required']"><small>Email is
+                                       required.</small></div>
+                                 <div *ngIf="Form['email'].errors && Form['email'].errors['email']"><small> Enter valid
+                                       email
+                                       address.</small></div>
+                              </div>
+
+                           </div>
+                           <div class="col-md-10 offset-md-1">
+                              <textarea name="" id="" cols="30" rows="3" placeholder="write message..."
+                                 formControlName="message"></textarea>
+                           </div>
+
+                           <div *ngIf="Form['message'].touched && Form['message'].invalid" class="alert alert-danger">
+                              <div *ngIf="Form['message'].errors && Form['message'].errors['required']"><small>A message
+                                    is
+                                    required.</small></div>
+                              <div *ngIf="Form['message'].errors && Form['message'].errors['message']"><small>Enter
+                                    valid
+                                    message.</small></div>
+                           </div>
+                        </div>
+                        <div class=" col-md-2 offset-md-8">
+                           <button type="submit" class="feedbackbutton" [disabled]="sendMailForm.invalid" (click)="sendMail()">Send</button>
+                        </div>
+
+                     </div>
+                  </form>
+                  <!--  -->
+               </section>
+            </div>
+            <!-- </body> -->

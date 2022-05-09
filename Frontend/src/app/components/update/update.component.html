@@ -1,0 +1,463 @@
+<app-navbar></app-navbar>
+
+
+<div class="main container mt-5 scrollable">
+    <div class="container ">
+        <div class="row mb-5">
+            <div class="col mb-5">
+                <div class="collection">
+                    <main class="info_ card mt-2 p-2 ">
+                        <div class="py-1 text-center ">
+                            <form [formGroup]="updateForm" (submit)="uploadPicture()">
+                                <img class="d-block mx-auto mb-3 user-img" src="{{candidateDetails.profile_pic}}" alt=""
+                                    width="171" height="228">
+
+                                <div class="row ">
+                                    <div class="col-sm-12">
+                                        <div class="file btn btn-sm m-auto change-photo">
+                                            <input type="file" formControlName="profile_pic" id="actual-btn"
+                                                (change)="onPicChange($event)" accept=".jpg" hidden />
+                                            <label for="actual-btn">change photo</label>
+                                            <div>
+                                                <button class="savephoto file btn btn-sm m-auto change-photo "
+                                                    type="submit">Save Photo</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <h3 class="text-center mfa-rotate-180">{{candidateDetails.first_name }}
+                            {{candidateDetails.last_name}}</h3>
+                        <div class="inputs d-flex flex-column col-12">
+                            <h6 class="text-muted">Tell the world about yourself</h6>
+                        </div>
+
+                        <div class="row mt-1 ml-1 mb-2">
+
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-12 ">
+                                <div class="container justify-content-center">
+                                    <div class="form-group w-100 mb-2 p-2">
+                                        <form [formGroup]="updateForm" (submit)="updateProfileText()">
+                                        <textarea class="user_bio form-control text-start text-muted p-3 " type="text"
+                                            id="email-input" placeholder="enter your bio" formControlName="bio"
+                                            [(ngModel)]="candidateDetails.bio"
+                                            maxlength="250"> {{candidateDetails.bio}}</textarea>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row g-5  p-3 ">
+                            <div class="">
+                                <h4 class="d-flex justify-content-between align-items-center mb-5">
+                                    <span class="">Engagement</span>
+                                    <span class="badge bg-primar rounded-pill">{{candidateDetails.profile_hits}}</span>
+                                </h4>
+                                <ul class="list-group mb-3">
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Full Name</h6>
+                                            <small class="text-muted">{{candidateDetails.first_name}}
+                                                {{candidateDetails.last_name}}</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Phone Number</h6>
+                                            <small class="text-muted">{{candidateDetails.phone_number}}</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Location</h6>
+                                            <small class="text-muted">{{candidateDetails.city}},
+                                                {{candidateDetails.province}}</small>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between lh-sm">
+                                        <div>
+                                            <h6 class="my-0">Job Title</h6>
+                                            <small class="text-muted"> {{candidateDetails.job_title}}</small>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                            </div>
+                            <div class="">
+                                <h4 class="mb-3">Update details</h4>
+
+                                <form [formGroup]="updateForm" (submit)="updateProfileText()">
+                                    <div class="row g-3">
+                                        <div class="col-sm-6">
+                                            <label for="firstName" class="form-label ">
+                                                <h6>City</h6>
+                                            </label>
+                                            <input class="form-control text-center  text-muted" type="text"
+                                                id="email-input" placeholder="enter city" formControlName="city"
+                                                [(ngModel)]="candidateDetails.city">
+                                            <div class="invalid-feedback">
+                                                Valid first name is required.
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-sm-6">
+                                            <label for="lastName" class="form-label ">
+                                                <h6>Province</h6>
+                                            </label>
+                                            <select class="form-select" id="country" required=""
+                                                [(ngModel)]="candidateDetails.province" formControlName="province"
+                                                placeholder="Enter Province">
+                                                <option value="">Choose...</option>
+                                                <option>Gauteng</option>
+                                                <option>Limpopo</option>
+                                                <option>Free State</option>
+                                                <option>Mpumalanga</option>
+                                                <option>Western Cape</option>
+                                                <option>Eastern Cape</option>
+                                                <option>North West</option>
+                                                <option>KwaZulu-Natal</option>
+                                                <option>Northern Cape</option>
+
+                                            </select>
+
+                                            <div class="invalid-feedback">
+                                                Please select a valid country.
+                                            </div>
+
+
+
+                                            <div class="invalid-feedback">
+                                                Valid last name is required.
+                                            </div>
+                                        </div>
+                                        <div class="inputs d-flex flex-column col-12">
+                                            <h6 class="update_title">Job title</h6>
+                                            <input class="form-control text-center text-muted" type="text"
+                                                id="email-input" placeholder="enter your job title"
+                                                formControlName="job_title" [(ngModel)]="candidateDetails.job_title">
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <h6 class="update_title">Company Culture</h6>
+                                            <select class="form-select" aria-label="Default select example"
+                                                [(ngModel)]="candidateDetails.culture" formControlName="culture">
+                                                <option selected value="">choose..</option>
+                                                <option value="Adhocracy culture">Adhocracy culture</option>
+                                                <option value="Clan culture">Clan culture</option>
+                                                <option value="Customer-focused culture">Customer-focused culture
+                                                </option>
+                                                <option value="Hierarchy culture">Hierarchy culture</option>
+                                            </select>
+
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <label for="email" class="form-label ">
+                                                <h6>Phone Number</h6>
+                                            </label>
+                                            <input class="form-control text-center text-muted" type="number"
+                                                id="email-input" formControlName="phone_number"
+                                                [(ngModel)]="candidateDetails.phone_number"
+                                                placeholder="{{candidateDetails.phone_number}}">
+
+
+                                            <div class="invalid-feedback">
+                                                Please enter a valid email address for shipping updates.
+                                            </div>
+                                        </div>
+                                        <div class="inputs d-flex flex-column col-12">
+                                            <h6 class="update_title">Skills</h6>
+                                            <textarea class="form-control text-center text-muted" type="text"
+                                                id="email-input" placeholder="enter your skills, separated by a comma."
+                                                formControlName="skills"
+                                                [(ngModel)]="candidateDetails.skills"></textarea>
+                                        </div>
+
+                                        <div class="inputs d-flex flex-column col-12">
+                                            <h6 class="update_title">Interests</h6>
+                                            <textarea class="form-control text-center text-muted" type="text"
+                                                id="email-input"
+                                                placeholder="enter your interests, separated by a comma."
+                                                formControlName="interests"
+                                                [(ngModel)]="candidateDetails.interests"></textarea>
+                                        </div>
+
+
+                                        <div class="inputs d-flex flex-column col-12">
+                                            <h6 class="update_title">Highest qualification</h6>
+                                            <textarea class="form-control text-center text-muted" type="text"
+                                                id="email-input" placeholder="enter your highest qualification"
+                                                formControlName="highest_qualification"
+                                                [(ngModel)]="candidateDetails.highest_qualification"></textarea>
+                                        </div>
+
+                                        <div class="inputs d-flex flex-column col-12">
+                                            <h6 class="update_title">Experience</h6>
+                                            <input class="form-control text-center text-muted" type="text"
+                                                id="email-input"
+                                                placeholder="enter your experience in the format ( role - institution(startYear-finishYear) )"
+                                                formControlName="experience" [(ngModel)]="candidateDetails.experience">
+                                        </div>
+
+                                        <div class="inputs d-flex flex-column col-12">
+                                            <h6 class="update_title">Education</h6>
+                                            <input class="form-control text-center text-muted" type="text"
+                                                id="email-input"
+                                                placeholder="enter in the format ( qualification - institution(startYear-finishYear) )"
+                                                formControlName="education" [(ngModel)]="candidateDetails.education">
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+                                </form>
+
+                                <div class="container ">
+                                    <div class="row">
+                                        <!-- Resume -->
+                                        <div class="col-sm mt-2">
+                                            <form [formGroup]="updateForm" (submit)="updateResume()">
+                                                <div class="card dob-card" style="width: auto;">
+                                                    <div class="card-body col-12 d-flex justify-content-between">
+                                                        <div class="inputs d-flex flex-column col-12">
+                                                            <h4 class="">resumé</h4>
+                                                            <input class="text-center border-0 text-muted" type="file"
+                                                                name="email" id="email-input"
+                                                                placeholder="enter your DOB" formControlName="resume"
+                                                                (change)="onResumeChange($event)" accept=".pdf">
+                                                        </div>
+
+
+                                                    </div>
+                                                    <div *ngIf="spinnerState3" class="d-flex justify-content-center">
+                                                        <div class="spinner-border" role="status">
+                                                            <span class="sr-only"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- end of Resume -->
+
+                                        <!-- Video Resume -->
+                                        <div class="col-sm mt-2">
+                                            <form [formGroup]="updateForm" (submit)="updateVideoResume()">
+                                                <div class="card dob-card" style="width: auto;">
+                                                    <div class="card-body col-12 d-flex justify-content-between">
+                                                        <div class="inputs d-flex flex-column col-12">
+                                                            <h4 class="">video resumé</h4>
+                                                            <input class="text-center border-0 text-muted" type="file"
+                                                                name="email" id="email-input"
+                                                                placeholder="enter your DOB"
+                                                                (change)="onVideoChange($event)" accept=".mp4"
+                                                                formControlName="videoResume">
+                                                        </div>
+
+                                                    </div>
+                                                    <div *ngIf="spinnerState4" class="d-flex justify-content-center">
+                                                        <div class="spinner-border" role="status">
+                                                            <span class="sr-only"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- End of Video Resume -->
+
+                                        <div class="col-sm mt-2">
+                                            <form [formGroup]="updateForm" (submit)="updateCertificate()">
+                                                <div class="card dob-card" style="width: auto;">
+                                                    <div class="card-body col-12 d-flex justify-content-between">
+                                                        <div class="inputs d-flex flex-column col-12">
+                                                            <h4 class="">Add certificates</h4>
+                                                            <input class="text-center border-0 text-muted" type="file"
+                                                                name="email" id="email-input"
+                                                                placeholder="enter your DOB"
+                                                                (change)="onCertificateChange($event)" accept=".pdf"
+                                                                formControlName="highestCertificate">
+                                                        </div>
+
+                                                    </div>
+                                                    <div *ngIf="spinnerState5" class="d-flex justify-content-center">
+                                                        <div class="spinner-border" role="status">
+                                                            <span class="sr-only"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+                                <div class="modal" tabindex="-1">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Modal title</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Modal body text goes here.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <h5 class="text-center" data-toggle="modal" data-target="#recruiter">Update Password
+                            <span><i class="bi bi-plus-circle"></i></span>
+                        </h5>
+
+                        <div *ngIf="spinnerState2" class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only"></span>
+                            </div>
+                        </div>
+                        <form [formGroup]="updateForm" (submit)="updateProfileText()">
+                            <button type="submit" class="btn savephoto my-3 ">save changes</button>
+                        </form>
+                        <div class="row">
+                            <div class="col">
+
+
+
+
+
+                            </div>
+                        </div>
+
+                        <!-- <app-deactivate-account></app-deactivate-account> -->
+
+                    </main>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+<div class="modal fade" id="recruiter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <form [formGroup]="updatePassword" (ngSubmit)="updateUserPassword()">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Password</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card container m-auto h-100">
+                        <div class="card-body">
+
+
+                            <div class="form-group card2-body">
+                                <input type="password" class="form-control" formControlName="password" id="inputAddress"
+                                    placeholder="enter old password">
+                            </div>
+                            <div *ngIf="form['password'].touched && form['password'].invalid"
+                                class="alert alert-danger">
+                                <div *ngIf="form['password'].errors && form['password'].errors['required']">Old
+                                    password is
+                                    required.
+                                </div>
+                                <div *ngIf="form['password'].errors && form['password'].errors['password']">Please,
+                                    enter
+                                    valid
+                                    passord address.</div>
+                            </div>
+
+                            <div class="form-group card2-body">
+                                <input type="password" class="form-control" formControlName="newPassword"
+                                    id="inputAddress" placeholder="enter New password">
+                            </div>
+                            <div *ngIf="form['newPassword'].touched && form['newPassword'].invalid"
+                                class="alert alert-danger">
+                                <div *ngIf="form['newPassword'].errors && form['newPassword'].errors['required']">
+                                    New password is required.</div>
+                                <div *ngIf="form['newPassword'].errors && form['newPassword'].errors['newPassword']">
+                                    Please, enter valid password.</div>
+                            </div>
+
+
+                            <div class="form-group card2-body">
+                                <input type="password" class="form-control" formControlName="compareNewPassword"
+                                    id="inputAddress" placeholder="enter new password again">
+                            </div>
+                            <div *ngIf="form['compareNewPassword'].touched && form['compareNewPassword'].invalid"
+                                class="alert alert-danger">
+                                <div
+                                    *ngIf="form['compareNewPassword'].errors && form['compareNewPassword'].errors['required']">
+                                    New password is
+                                    required.</div>
+                                <div
+                                    *ngIf="form['compareNewPassword'].errors && form['compareNewPassword'].errors['compareNewPassword']">
+                                    Please,
+                                    enter valid password.</div>
+                            </div>
+
+
+                            <div class="form-group card2-body">
+                                <input type="email" class="form-control" formControlName="email"
+                                    [(ngModel)]="candidateDetails.email" hidden id="inputAddress"
+                                    placeholder="enter eamil address">
+                            </div>
+                            <div *ngIf="form['email'].touched && form['email'].invalid" class="alert alert-danger">
+                                <div *ngIf="form['email'].errors && form['email'].errors['required']">
+                                    New email is
+                                    required.</div>
+                                <div *ngIf="form['email'].errors && form['email'].errors['email']">
+                                    Please,
+                                    enter valid email.</div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger mt-3 " data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary mt-3 ">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<!-- end of candidate modal -->

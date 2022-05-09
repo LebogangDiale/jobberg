@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+
+<div id="content" class="container p-0">
+    <div class="profile-header">
+        <div class="profile-header-cover"></div>
+        <div class="profile-header-content">
+            <div class="profile-header-img">
+                <!-- <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" /> -->
+            </div>
+            <div class="profile-header-info">
+                <h4 class="m-t-sm">Clyde Stanley</h4>
+                <p class="m-b-sm">UX/UI + Frontend Developer</p>
+                <a href="#" class="btn btn-xs btn-primary mb-4">Edit Profile</a>
+            </div>
+        </div>
+          </div>
+      </div>
+   
+
+
+
+
+        <ul class="profile-header-tab nav nav-tabs">
+            <li class="nav-item"><a href="#shortlisted" class="nav-link" data-toggle="tab" (click)="shortlist()">SHORT-LISTED</a></li>
+            <li class="nav-item"><a href="#messages" class="nav-link active show" data-toggle="tab" (click)="shortlist()">MESSAGES<span
+                        class='badge badge-warning' id='lblCartCount'> 5 </span></a>
+
+<div class="card text-center mt-5 ml-3 mr-3" style="width: AUTO;">
+    <div class="card-header">
+        <h3>{{recruiterInfo.first_name}} {{recruiterInfo.last_name}}</h3>
+    </div>
+</div>
+
+<div class="accordion" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-center" type="button" data-toggle="collapse"
+                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5>Personal Information</h5>
+                </button>
+            </h2>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <li class="stretched-link">
+                    <h5>Name: {{recruiterInfo.first_name}} {{recruiterInfo.last_name}}</h5>
+                </li>
+
+                <li class="stretched-link">
+                    <h5>Phone: {{recruiterInfo.phone_number}}</h5>
+                </li>
+                <li class="stretched-link">
+                    <h5>Email: {{recruiterInfo.email}}</h5>
+                </li>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="btn btn-link btn-block text-center collapsed" type="button" data-toggle="collapse"
+                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h5>Privacy</h5>
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+
+
+                <!-- Button trigger modal -->
+                <span type="button" class="texts" data-toggle="modal" data-target="#exampleModal">
+                    Edit profile
+                </span>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group row">
+                                      <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+                                      <div class="col-sm-10">
+                                        <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                      <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                                      <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="inputPassword">
+                                      </div>
+                                    </div>
+                                  </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <span type="submit" class="texts" routerLink="/wishlist">View Saved Cadidates</span>
+                <br>
+
+
+            </div>
+            <div class="vertical-center">
+                <button class="btn btn-primary ">Logout</button>
+            </div>
+        </div>
+    </div>
+
+</div>

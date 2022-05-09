@@ -1,0 +1,164 @@
+<app-navbar></app-navbar>
+
+<div class="cover-container d-flex ">
+  <div class="row">
+    <div class="col col-sm-6 col-md-12 col-lg-12 col-xl-12 mt-5 justify-content-center">
+      <h2 class="searchtitle text-center">{{ filterTerm }}</h2>
+
+      
+      <form class="form w-50 text-center">
+        <input class="form-control search-field" name="name"  type="text" placeholder="search candidates..."
+          [(ngModel)]="filterTerm" aria-label="Search" (ngModelChange)="searchCandidate($event)" />
+        <span class="fa fa-search form-control-feedback"></span>
+      </form>
+
+
+      <div class="searchform mt-1">
+        
+        
+        <br />
+
+        <div class="container justify-content-between">
+        <div class="row">
+          <div class="col-sm-6 col-md-12 col-lg-12 col-xl-12 justify-content-center ">
+            <div class="col-sm-4">
+              <select class="custom-select mt-2" id="inputGroupSelect01" [(ngModel)]='filterQualification' placeholder="Select Level Of Qualification">
+                <option value="" selected disabled hidden>Filter by Qualification level</option>
+                <option value="">All</option>  
+                <option value="Grade 9">Grade 9</option>
+                <option value="Grade 10 and National (vocational) Certificates level 2">Grade 10 and National (vocational) Certificates level 2</option>
+                <option value="Grade 11 and National (vocational) Certificates level 3">Grade 11 and National (vocational) Certificates level 3</option>
+                <option value="Grade 12 (National Senior Certificate) and National (vocational) Cert.
+                level 4">Grade 12 (National Senior Certificate) and National (vocational) Cert.
+                    level 4</option>
+                <option value="Higher Certificates and Advanced National (vocational) Cert.">Higher Certificates and Advanced National (vocational) Cert.</option>
+                <option value="National Diploma">National Diploma</option>
+                <option value="Advanced certificate">Advanced certificate</option>
+                <option value="Bachelor's degree, Advanced Diplomas, Post Graduate Certificate and B-tech">Bachelor's degree, Advanced Diplomas, Post Graduate Certificate and B-tech
+                </option>
+                <option value="Honours degree, Post Graduate diploma and Professional Qualifications">Honours degree, Post Graduate diploma and Professional Qualifications
+                </option>
+                <option value="Master's degree">Master's degree</option>
+                <option value="Doctor's degree">Doctor's degree</option>
+    
+            </select>
+            </div>
+         
+            <div class="col-sm-4">
+              <select class="custom-select mt-2 " id="inputGroupSelect01" [(ngModel)]='filterLocation' placeholder="Select location">
+                <option value="" selected disabled hidden>Filter by location</option>
+                <option value="">All</option>
+                <option value="Eastern Cape">Eastern Cape</option>
+                <option value="Free State">Free State</option>
+                <option value="Gauteng">Gauteng</option>
+                <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                <option value="Limpopo">Limpopo</option>
+                <option value="Mpumalanga">Mpumalanga</option>
+                <option value="Northern Cape">Northern Cape</option>
+                <option value="North West">North West</option>
+                <option value="Western Cape">Western Cape</option>
+            </select>
+            </div>
+      
+            <div class="col-sm-4">
+              <select class="custom-select mt-2" id="inputGroupSelect01" [(ngModel)]='filterCulture' placeholder="Select Culture">
+                <option value="" selected disabled hidden><h6>Filter by culture</h6></option>
+                <option value="">All</option>
+                <option value="Adhocracy culture">Adhocracy culture</option>
+                <option value="Clan culture">Clan culture</option>
+                <option value="Customer-focused culture">Customer-focused culture</option>
+                <option value="Hierarchy culture">Hierarchy culture</option>
+            </select>
+
+            </div>
+     
+          </div>
+        </div>
+      </div>
+        <div class="input-group mb-3 justify-content-between">
+
+
+
+      </div>
+
+
+
+
+        <!-- <div class="searchbutton text-center">
+          <button class="btn btn-outline-success my-2 my-sm-0 px-4" type="submit">
+            Search
+          </button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="titlesec container d-flex mb-5">
+  <div class="row">
+    <div class="col col-sm-6 col-md-6 col-lg-12 col-xl-12 mt-3">
+      <h5 class="resultstitle">
+        <i class="bi bi-gift"></i> Results of candidates 
+      </h5>
+      
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row justify-content-center">
+   
+
+
+
+<div class="m-2 col-md-6" style="max-width: 450px;" *ngFor="let user of candidateProfiles | filter: filterTerm | filterCandidates : filterQualification | filterByLocation : filterLocation | filterByCulture : filterCulture  | paginate : { itemsPerPage:10, currentPage:p, totalItems: total}; " (click)="routeToProfile(user.fk_candidate_id) ">
+  <div class="row g-0">
+    <div class="candidate_select card flex-row">   
+
+        <div class="col-md-4">
+          <img src={{user.profile_pic}} class="candidate_profiles img-fluid rounded-start" alt="..." >
+         
+        </div>
+
+        <div class="col-md-8">      
+            <h4 class="name_title m-1">{{ user.first_name | titlecase}} {{user.last_name | titlecase}}</h4>
+            <p class="card-text "> {{ user.bio }}.</p>
+            <p class="card-textcity "><small class="location_text">{{ user.city }}, {{user.province}}</small></p>
+            
+              <button *ngIf="recruiter!=null" type="button" class="btnsave mt-3 "  (click)="AddCandidateToShortlist(user.fk_candidate_id)"> <p class="viewbtn">Save</p></button>          
+                
+                  
+              <button type="button" class="removebtn mt-2 mb-2"> <p class="viewbtn"> View profile</p> </button>
+         
+            
+         
+                
+       
+             
+               
+             
+          
+            <!-- <button *ngIf="recruiter!=null" type="button" class="removebtn mt-4"  (click)="AddCandidateToShortlist(user.fk_candidate_id)">Save</button>
+            <button type="button" class="removebtn btn btn-primary mt- m-2"> View profile </button> -->
+            <!-- should be here -->
+        </div>
+      
+       
+      </div>
+    </div>
+</div>
+<pagination-controls (pageChange)="pageChangeEvent($event)"></pagination-controls>
+</div>
+
+</div>
+
+
+

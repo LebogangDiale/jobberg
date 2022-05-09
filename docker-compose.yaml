@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  angular:
+    build: ./Frontend
+    container_name: angular_c
+    image: registry.thedigitalacademy.co.za/fs/jobberg:0.0.1
+    ports:
+      - '4315:4315'
+    stdin_open: true
+
+    
+  express:
+    build: ./Backend
+    container_name: express_c
+    image: registry.thedigitalacademy.co.za/fs/jobberg-api:0.0.1
+    ports:
+      - '4316:4316'
+    # volumes:
+    #   - ./api:/app
+    #   - ./app/node_modules

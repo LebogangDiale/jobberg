@@ -1,0 +1,216 @@
+<app-navbar></app-navbar>
+
+
+<!-- video modal -->
+
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+
+
+      <!-- video resume -->
+      <video src="{{candidateDetails.video_resume}}" controls controlsList="nodownload">
+        Your browser does not support the video tag.
+      </video>
+      <!-- end of video -->
+
+    </div>
+  </div>
+
+
+</div>
+
+<div class="profile-widget container">
+
+  <div class="cover-img">
+    <img src="../../../assets/jobberg_cover copy.svg" alt="User profile cover photo">
+  </div>
+
+  <div class="row">
+
+    <div class="col-lg-4 col-sm-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class="user-img">
+              <img class="profile_overlay" src="{{candidateDetails.profile_pic}}" alt="User photo" data-toggle="modal"
+                data-target=".bd-example-modal-xl">
+            </div>
+            <div class="names mt-2">
+              {{candidateDetails.first_name}} {{candidateDetails.last_name}}
+            </div>
+
+          </div>
+          
+            <div class="qual">
+              {{candidateDetails.job_title}}
+            </div>
+            <div class="location">
+              {{candidateDetails.city}}, {{candidateDetails.province}}
+            </div>
+            <!-- <a class="btn btn-dark" href="mailto:{{candidateDetails.email}}">Send message</a> -->
+            <div class="col-sm-12 text-center" *ngIf="recruiter!==null">
+              <button type="button" class="messagestyle btn mr-2">
+                <a href="mailto:{{candidateDetails.email}}" class="fcc-btn">Send message</a>
+            </button>
+            </div>
+            <div style="text-align: center;"  *ngIf="recruiter==null">
+              <p> <a type="button" class="mr-2" routerLink="/user-login">
+                <i class="bi bi-exclamation-circle link"> </i>
+              </a> login for detailed profile</p>
+            </div>
+            <div class="col-sm-6 text-center">
+           
+          </div>
+          <div class="container justify-content-center">
+            <div class="row">
+              <div class="col">
+                  <h4 style="text-align: center;" class="hearders mt-3">Contact information</h4>
+            <table class="table table-bordered border-dark" *ngIf="recruiter!==null">
+              <tr>
+                <!-- Phone number -->
+                <th scope="row" style="border: black;">
+                  Number: {{candidateDetails.phone_number}}
+                </th>
+              </tr>
+              <tr>
+                <!-- email -->
+                <th scope="row" style="border: black;">
+                  Email: {{candidateDetails.email}}
+                </th>
+              </tr>
+            </table>
+            <table class="table table-bordered border-dark" *ngIf="recruiter==null">
+              <tr>
+                <!-- Phone number -->
+                <th scope="row" style="border: black;">
+                  Number: <a type="button" class="mr-2" routerLink="/user-login">
+                    <i class="bi bi-exclamation-circle link"> </i>
+                  </a> login to view
+                </th>
+              </tr>
+              <tr>
+                <!-- email -->
+                <th scope="row" style="border: black;">
+                  Email:<a type="button" class="mr-2" routerLink="/user-login"><i class="bi bi-exclamation-circle link"> </i></a> login to view
+                </th>
+              </tr>
+            </table>
+
+
+
+            <h4 style="text-align: center;" class="mt-2 hearders">Tools & Skills</h4>
+            <table class="table table-bordered border-dark">
+              <div class="panel-body">
+                <ul class="list-group" *ngFor="let skills of candidateSkillsArray">
+                  <td class="list-group-item">{{skills}}
+                  </td>
+                </ul>
+              </div>
+            </table>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-8 col-sm-12">
+      <div class="container justify-content-center">
+        <h2 class="bio mt-5">Candidate Bio</h2>
+        <p class="bio-info mt-3">
+          {{candidateDetails.bio}}
+        </p>
+        <!-- Something -->
+
+        <div class="content">
+
+          <!-- Nav pills -->
+
+          <ul class="nav nav-pills mt-5" role="tablist">
+            <li class="nav-item viewmore ">
+              <a class="nav-link active " data-toggle="pill" href="#Experience">Experience</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#Interests">Interests</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#Education">Education</a>
+            </li>
+
+          </ul>
+
+          <!-- Tab panes -->
+
+          <div class="tab-content">
+            <div id="Experience" class="container tab-pane active">
+              <table class="table mt-3">
+                <thead>
+                  <tr class="color">
+                    <th scope="col">Experience</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <div class="list-group" *ngFor="let experience of candidateExperienceArray">
+                      <td> {{experience}}</td>
+                    </div>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div id="Interests" class="container tab-pane fade">
+              <div id="Experience" class="container tab-pane active">
+                <table class="table mt-3">
+                  <thead>
+                    <tr class="color">
+                      <!-- <th scope="col">#</th> -->
+                      <th scope="col" class="text-center">My interests</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <div class="list-group" *ngFor="let interest of candidateInterestsArray">
+                        <td>{{interest}}
+                        </td>
+                      </div>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div id="Education" class="container tab-pane fade">
+              <div id="Experience" class="container tab-pane active">
+                <table class="table mt-3">
+                  <thead>
+                    <tr class="color">
+                      <th scope="col" class="text-right">Qualifcation</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <div class="list-group" *ngFor="let education of candidateEducationArray">
+                        <td>{{education}}</td>
+                      </div>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!-- Something -->
+
+      </div>
+    </div>
+
+  </div>
+</div>

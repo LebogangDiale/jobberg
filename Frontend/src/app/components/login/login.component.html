@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid pb-5">
+
+    <div class="intro-text text-center col-sm-12 ">
+        <div class="login-text mt-5 mb-3">
+            <span><h2 class="intro d-inline-block fs-3">STEP 2:</h2><span class="span fs-3"> Login to your profile</span></span>
+        </div>
+        
+        <div class="welcome d-block fw-lighter fs-6">
+            <p>Time to embark on your unique career journey. Continue with us.</p>   
+        </div>
+    </div>
+
+    <!-- <app-deactivate-account></app-deactivate-account> -->
+    
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <div class="card m-auto mt-5 d-flex align-content-center border-top-0" style="width: 18rem; height: auto; border-radius: 4%">
+        <div class="card-body mt-2">
+          <h5 class="details fw-normal text-center">Enter your details.</h5>
+          <p class="username text-center mt-4 fw-light">enter username</p>
+          <input  formControlName="email" type="email" placeholder="email.." class=" email text-center align-content-center mt-2 border-0 fw-lighter fs-6">
+          <div class="underline border-bottom mt-2">
+            
+          </div>
+          <div *ngIf="Form['email'].touched && Form['email'].invalid" class="alert alert-danger">
+            <div *ngIf="Form['email'].errors && Form['email'].errors['required']"><small>Email is required.</small></div>
+            <div *ngIf="Form['email'].errors && Form['email'].errors['email']"><small> enter valid email address.</small></div>
+          </div>
+          <p class="username text-center mt-4 fw-light">enter password</p>
+          <input  formControlName="password"  type="password" placeholder="password.." class=" email text-center align-content-center mt-2 border-0 fw-lighter fs-6">
+          <div class="underline border-bottom mt-2"></div>
+          <div *ngIf="Form['password'].touched && Form['password'].invalid" class="alert alert-danger">
+            <div *ngIf="Form['password'].errors && Form['password'].errors['required']"><small>password is required.</small></div>
+            <div *ngIf="Form['password'].errors && Form['password'].errors['password']"><small>Please, enter valid password address.</small></div>
+          </div>
+          <p><a routerLink="/forgot" class="text-center pt-1" style="font-size: 12px; color: #7E91BC;">Forgot Password?</a></p>
+          <p><a routerLink="/register" class="text-center pt-1" style="font-size: 12px; color: #7E91BC;">Dont have an account?</a></p>
+          <!-- spinner -->
+          <div *ngIf="isloading" class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only"></span>
+            </div>
+          </div>
+
+          <div class="button col-sm-12">
+            <button class=" my-2 d-flex justify-content-center" type="submit" class="btn btn-dark" style="margin-left: 24%; margin-top: 19%; border-radius: 28px; width: 129px; " [disabled]="loginForm.invalid">Continue</button>
+          </div>
+          <p class="card-text"></p>
+          
+        </div>
+      </div>
+    </form>   
+
+</div>

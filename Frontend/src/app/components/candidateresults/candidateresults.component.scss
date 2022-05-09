@@ -1,0 +1,329 @@
+* {
+  margin: 0 auto;
+  float: none;
+  // margin-bottom: 10px;
+}
+
+.form-control {
+  position: relative;
+
+  padding: 1rem;
+  border-style: none;
+  background: #FEFEFE;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 40px;
+  text-align: center;
+}
+
+// .btn {
+//   background: #7e91bc;
+//   color: #fefefefe;
+//   border-style: none !important;
+ 
+// }
+
+.removebtn{
+  
+    background: #7e91bc;
+    color: #fefefefe;
+    border-style: none !important;
+    width: 6rem;
+    padding: 0.5rem
+    
+ 
+    
+  }
+
+  .btnsave{
+    color:#fefefe;
+    background: #2d3238;
+    border-style: none !important;
+    width: 6rem;
+    padding: 0.5rem
+  }
+  .btnsave:hover{
+    background: #fefefe;
+    color: #7e91bc;
+    
+  }
+
+  .removebtn:hover{
+    background: #fefefe;
+    color: #7e91bc;
+    
+  }
+
+.name_title{
+  font-family: 'Arvo';
+  font-style: normal;
+  font-weight: 700;
+  /* identical to box height */
+  color: #1E2126;
+}
+
+
+.searchtitle {
+  font-family: "Arvo";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 58px;
+  color: #2d3238;
+}
+
+.description {
+
+  inline-size: 480px;
+  overflow-wrap: break-word;
+  margin: 0 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "Arimo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.location {
+  color: #7e91bc;
+  font-family: "Arvo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 17px;
+  position: inline;
+}
+
+
+.username {
+ 
+  // position: inline;
+  font-family: "Arvo";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 40px;
+  
+}
+
+.imageprofile{
+  position: absolute;
+  // width: 146px;
+  // height: 146px;
+  // left: 306px;
+  // top: 774px;
+
+}
+
+.viewmore {
+
+  color: white;
+  border-style: none;
+  background: transparent;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 15px 15px;
+  background: #7E91BC;
+  border-radius: 28px;
+
+}
+
+// .useravatar {
+//   position: inline;
+
+// }
+
+// .list-group-item {
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 12px;
+// }
+// .list-group-item:hover::after {
+//   background: #fefefe;
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 12px;
+// }
+// .list-group-item:hover::before {
+//   background: rgba(126, 145, 188, 0.8);
+//   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//   border-radius: 12px;
+// }
+
+.resultstitle {
+  font-family: "Arvo";
+ 
+  font-weight: 700;
+  
+ 
+  color: #2d3238;
+ 
+  
+}
+
+// .list-group {
+//   border-top: 1rem;
+// }
+
+.bookmark{
+  font-size: 20px;
+  color: #7e91bc;
+  
+}
+
+
+// cards
+
+.caerd__container {
+  padding: 1rem;
+  margin: 2rem 10rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.caerd__container:hover {
+  background: rgba(126, 145, 188, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+}
+
+// .image__container img {
+//   width: 10rem;
+//   height: 10rem;
+//   top: 6rem;
+//   margin: .5rem 2rem;
+// }
+
+.card__text h4 {
+  text-align: left;
+}
+
+.card__text p {
+  padding-top: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "Arimo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.card__footer {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.card__footer span {
+  margin-left: 0;
+}
+
+.card__footer i {
+  margin-right: 0;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .card__content {
+    flex-direction: column;
+  }
+}
+
+.card-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "Arimo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+.card-textcity{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  font-family: "Arimo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 20px;
+}
+
+
+// .listcandidates{
+//   max-height: 165px;
+//   overflow:scroll;
+//   -webkit-overflow-scrolling: touch;
+// }
+
+// .card-img{
+//   object-fit: cover;
+//   width: 100%;
+//   height: 150px;
+// }
+
+
+.candidate_select{
+padding:1.3rem;
+height: 18rem;
+
+// max-height: 15rem;
+
+}
+
+.candidate_select:hover{
+  
+  border-style: none;
+  background: transparent;
+  font-weight: bold;
+  padding: 1.1rem 1.1rem;
+  background: #7E91BC;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #fefefe;
+  
+  cursor: pointer;
+  .card-location-text{
+    color: #fefefe;
+  }
+}
+
+.card-location-text{
+  color: #7E91BC;
+}
+
+
+
+
+
+// .user_profilepic{
+//   width: 103.5;
+//   height: 103.5;
+//   max-width: 103.5px;
+//   max-height: 103.5px;
+// }
+
+.custom-select{
+  position: relative;
+  border-style: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.viewbtn{
+  font-size:11px;
+
+}

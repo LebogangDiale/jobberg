@@ -1,0 +1,42 @@
+.btn-primary {
+    background-color: #7e91bc;
+    border: #7e91bc;
+    font-family: "Arvo";
+    font-style: normal;
+}
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.vertical-center {
+    margin: 0;
+    position: relative;
+    top: 50%;
+    left: 47%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+li {
+    list-style-type: none;
+    font-family: "Arvo";
+    font-style: normal;
+}
+
+.card-header {
+    background-color: #7e91bc80;
+    font-family: "Arvo";
+    font-style: normal;
+}
+
+.texts {
+    font-family: "Arvo";
+    font-style: normal;
+}
+
+span:hover {
+    color: #7e91bc;
+}

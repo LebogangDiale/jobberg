@@ -1,0 +1,155 @@
+<app-navbar></app-navbar>
+
+<div class="container d-flex justify-content-center">
+    <div class="row">
+      <div class="col col-sm-6 col-md-6 col-lg-12 col-xl-12 mt-5">
+        <p class="searchtitle text-center">{{ filterTerm }}</p>
+        <div class="searchform mt-5">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" name="name" type="text" placeholder="search candidates..."
+              [(ngModel)]="filterTerm" aria-label="Search" />
+            <span class="fa fa-search form-control-feedback"></span>
+          </form>
+          <br />
+          <div class="searchbutton text-center">
+            <button class="btn btn-outline-success my-2 my-sm-0 px-4" type="submit">
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="titlesec container d-flex mb-5">
+    <div class="row">
+      <div class="col col-sm-6 col-md-6 col-lg-12 col-xl-12 mt-5">
+        <h2 class="resultstitle">
+          <i class="bi bi-gift"></i> Saved candidates
+        </h2>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="container ">
+  <div class="card mb-3" style="max-width: 540px;" *ngFor="let user of candidateProfiles | filter: filterTerm">
+    <div class="row g-0">
+      <div class="candidate_select card flex-row">
+  
+          <div class="col-md-4">
+            <img src={{user.profile_pic}} class="candidate_profiles img-fluid rounded-start" alt="...">
+          </div>
+  
+          <div class="col-md-8">      
+              <h2 class="card-title m-1">{{ user.first_name }} {{user.last_name}}</h2>
+              <p class="card-text "> {{ user.bio }}.</p>
+              <p class="card-text "><small class="location_text">{{ user.city }}, {{user.province}}</small></p>
+              <button type="button" class="removebtn mt-5" (click)="removeCandidate(user.fk_candidate_id)">remove</button>
+              <button type="submit" class="removebtn mt-5 m-1" (click)="routeToProfile(user.fk_candidate_id)">view</button>
+              <p class="datesaved ">Saved at: {{user.date | date:'short'}} </p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </div>
+
+
+  <!-- candidate modal -->
+<h5 class="text-center" data-toggle="modal" data-target="#recruiter">Update Password <span><i
+  class="bi bi-plus-circle"></i></span></h5>
+
+
+
+  <div class="modal fade" id="recruiter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form [formGroup]="updatePassword" (ngSubmit)="updateUserPassword()">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Update Password</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card container m-auto h-100">
+                            <div class="card-body">
+                                <!-- <div class=" text-center col-sm-12">
+                                    <span class="fs-1 fw-lighter create"> Create a new recruiter profile</span>
+                                </div> -->
+
+
+                                <div class="form-group card2-body">
+                                    <input type="password" class="form-control" formControlName="password" id="inputAddress"
+                                        placeholder="enter old password">
+                                </div>
+                                <div *ngIf="form['password'].touched && form['password'].invalid" class="alert alert-danger">
+                                    <div *ngIf="form['password'].errors && form['password'].errors['required']">Old password is
+                                        required.
+                                    </div>
+                                    <div *ngIf="form['password'].errors && form['password'].errors['password']">Please, enter
+                                        valid
+                                        passord address.</div>
+                                </div>
+
+                                <div class="form-group card2-body">
+                                    <input type="password" class="form-control" formControlName="newPassword"
+                                        id="inputAddress" placeholder="enter New password">
+                                </div>
+                                <div *ngIf="form['newPassword'].touched && form['newPassword'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="form['newPassword'].errors && form['newPassword'].errors['required']">
+                                        New password is required.</div>
+                                    <div *ngIf="form['newPassword'].errors && form['newPassword'].errors['newPassword']">
+                                        Please, enter valid password.</div>
+                                </div>
+
+
+                                <div class="form-group card2-body">
+                                    <input type="password" class="form-control" formControlName="compareNewPassword"
+                                        id="inputAddress" placeholder="enter new password again">
+                                </div>
+                                <div *ngIf="form['compareNewPassword'].touched && form['compareNewPassword'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="form['compareNewPassword'].errors && form['compareNewPassword'].errors['required']">
+                                        New password  is
+                                        required.</div>
+                                    <div *ngIf="form['compareNewPassword'].errors && form['compareNewPassword'].errors['compareNewPassword']">
+                                        Please,
+                                        enter valid password.</div>
+                                </div>
+
+
+                                <div class="form-group card2-body">
+                                  <input type="email" class="form-control" formControlName="email" [(ngModel)]="recruiterProfile[0].email" hidden
+                                      id="inputAddress" placeholder="enter eamil address">
+                              </div>
+                              <div *ngIf="form['email'].touched && form['email'].invalid"
+                                  class="alert alert-danger">
+                                  <div *ngIf="form['email'].errors && form['email'].errors['required']">
+                                      New email  is
+                                      required.</div>
+                                  <div *ngIf="form['email'].errors && form['email'].errors['email']">
+                                      Please,
+                                      enter valid email.</div>
+                              </div>
+
+                                
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger mt-3 " data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary mt-3 ">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+  

@@ -1,0 +1,102 @@
+.wrapper {
+   
+    display: grid;
+    grid-template-columns: repeat(2, [col-start] minmax(0, 1fr));
+    grid-template-rows: max-content;
+    grid-auto-flow: dense;
+    gap: 1rem;
+    padding: auto;
+
+}
+  
+  .item {
+    position: relative;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    overflow: hidden;
+    height: 150px;
+    color: #000;
+    background: linear-gradient(137.85deg,#f1f3f6 13.92%,#fff 84.77%);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
+    box-shadow: 5px 5px 20px rgba(150, 150, 150,0.35);
+    
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4rem;
+      box-shadow: inset 0px -2rem 12px -1rem rgba(250, 250, 250, 0.9);
+      pointer-events: none;
+      grid-row: 100px;
+      transition: all ease-in .25s;
+    }
+    &:after {
+      content: "inactive";
+      position: absolute;
+      top: 2px;
+      right: 2px;
+      font-size: 0.6rem;
+      color: #F71E35;
+    }
+    &.active {
+      grid-column: 1 / -1;
+      background: rgb(250,250,250);
+      height: auto;
+      cursor: initial;
+      grid-row: 1;
+      
+      &:before {
+        box-shadow: none;
+      }
+      &:after {
+        content: "active";
+        color: #2BBBD8;
+      }
+    }
+  }
+  
+  body {
+    background: linear-gradient(180deg, #F1F3F6 0%, rgba(241, 243, 246, 0) 100%);
+    min-height: 100vh;
+    font-weight: 300;
+  }
+
+//   carousel
+
+/* Hide the scroll bars */
+body {
+    overflow-y: hidden;
+  }
+  
+  .slides {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    overflow-x: scroll;
+  /*   width: 500px; */
+  /*   height: 300px; */
+  }
+
+  .cardbanner {
+    height: 20rem;
+    min-width: 0rem;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    scroll-snap-align: start;
+    
+  }
+  .bannerimage{
+    height: 40rem;
+    min-width: 0rem; 
+    width: 500px; 
+    height: 300px;
+  }
+
+  .btn3{
+      top:100%;
+      bottom:0rem;
+  }

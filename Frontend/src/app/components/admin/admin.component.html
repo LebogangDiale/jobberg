@@ -1,0 +1,1026 @@
+<app-navbar></app-navbar>
+
+<!-- <div class="container">
+    <div class="row"> 
+        <div class="col-12">
+            <div class="admin_name text-center">
+                {{adminDetails.first_name}} {{adminDetails.last_name}}
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="details card text-white  mb-3">
+                <div class="card-header">
+                    <h3 class="text-center">Admins</h3>
+                  </div>
+                <div class="card-body text-center">
+                   
+                    <h1 class="text-center">{{numAdmins}}</h1> -->
+<!-- <i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i> -->
+<!-- </div>
+                <div class="card-footer">
+                    <h5 class="text-center" data-toggle="modal" data-target="#addAdmin">Add <span><i
+                                class="bi bi-plus-circle"></i></span></h5>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-6">
+
+            <div class="card " >
+                <div class="card-header">
+                    <h3 class="text-center">Recruiters</h3>
+                </div>
+                <div class="card-body">
+                    
+                    <h1 class="text-center">{{numRecruiters}}</h1> -->
+<!-- <i class="bi bi-person-plus-fill"></i> -->
+<!-- </div>
+                <div class="card-footer">
+                    <h5 class="text-center">View More <span><i class="bi bi-plus-circle"></i></span></h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+
+            <div class="card " >
+                <div class="card-header">
+                    <h3 class="text-center">Active Accounts</h3>
+                </div>
+                <div class="card-body">
+                    <h1 class="text-center">{{numCandidates}}</h1> -->
+<!-- <i class="bi bi-person-plus-fill"></i> -->
+<!-- </div>
+            
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card " >
+                <div class="card-header">
+                    <h3 class="text-center">Deactived Accounts</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                    <div class="col-6">
+                        <h1 class="text-right">{{numCandidates}}</h1>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn">view</button>
+                    </div>
+                    </div> -->
+
+<!-- <i class="bi bi-person-plus-fill"></i> -->
+<!-- </div>
+            
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+<main>
+    <div class="container mt-5">
+        <div class="row align-items-md-stretch mb-2">
+            <div class="col-12">
+                <h1 class="welcome_admin text-center">Welcome {{adminDetails.first_name | titlecase }}
+                    {{adminDetails.last_name | titlecase }}!<br>
+                    <h5>This is your dashboard. The page where you can organize your platform</h5>
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3">
+        <div class="row align-items-md-stretch">
+            <div class="col-md-4">
+                <div class="h-100 p-1 rounded-3">
+                    <div class="details card mb-3">
+                        <div class="header card-header">
+                            <h3 class="text-center">Admins</h3>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h1 class="text-center">{{numAdmins}}</h1>
+                            <!-- <i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i> -->
+                        </div>
+                        <div class="header card-footer">
+                            <h5 class="text-center" data-toggle="modal" data-target="#addAdmin">Add <span><i
+                                        class="bi bi-plus-circle"></i></span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="h-100 p-1 rounded-3">
+                    <div class="details card mb-3">
+                        <div class="header card-header">
+                            <h3 class="text-center">Candidates</h3>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h1 class="text-center">{{numCandidates}}</h1>
+                            <!-- <i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i> -->
+                        </div>
+                        <div class="header1 card-footer">
+                            <h6 class="text-center text-muted"> can't add candidates </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="h-100 p-1 rounded-3">
+                    <div class="details card mb-3">
+                        <div class="header card-header">
+                            <h3 class="text-center">Recruiters</h3>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h1 class="text-center">{{numRecruiters}}</h1>
+                            <!-- <i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i> -->
+                        </div>
+                        <div class="header card-footer">
+                            <h5 class="text-center" data-toggle="modal" data-target="#recruiter">Add <span><i
+                                        class="bi bi-plus-circle"></i></span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-3">
+        <div class="row align-items-md-stretch">
+            <div class="col-md-6">
+                <div class="h-100 p-1 rounded-3">
+                    <div class="details card mb-3">
+                        <div class="header card-header">
+                            <h3 class="text-center">All Accounts</h3>
+                        </div>
+                        <div class="card-body text-center">
+
+                            <h1 class="text-center">{{numUsers}}</h1>
+                            <!-- <i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="h-100 p-1 rounded-3">
+                    <div class="details card mb-3">
+                        <div class="header card-header">
+                            <h3 class="text-center">Deactived Accounts</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h1 class="text-right">{{numNonActiveUsers}}</h1>
+                                </div>
+                                <div class="col-5">
+
+                                    <button class=" text-center btn btn-primary" class="VIEW_BUTTON btn "
+                                        data-toggle="modal" data-target="#exampleModal">view</button>
+                                </div>
+                            </div>
+
+                            <!-- <i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i> -->
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    View Candidates
+   </button> -->
+
+    <div class="container mt-5">
+        <div class="row align-items-md-stretch mb-2">
+            <div class="col">
+
+
+                <h2 class="welcome_admin">Keep track of your users <br>
+                    <h6> Choose a table below.</h6>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 text-center mt-2 mb-2">
+
+
+            <p>
+                <a class="VIEW_BUTTON1 btn  mr-4" data-toggle="collapse" href="#recruiters" role="button"
+                    aria-expanded="false" aria-controls="recruiters">View Recruiters<i
+                        class="m-2 bi bi-chevron-down"></i></a>
+
+                <button class="VIEW_BUTTON1 btn mr-4" type="button" data-toggle="collapse" data-target="#candidates"
+                    aria-expanded="false" aria-controls="candidates">View
+                    Candidates <i class=" m-2bi bi-chevron-down"></i></button>
+                <button class="VIEW_BUTTON1 btn mr-4" type="button" data-toggle="collapse" data-target="#admins"
+                    aria-expanded="false" aria-controls="admins">View
+                    Admins <i class=" m-2bi bi-chevron-down"></i></button>
+                <button class="VIEW_BUTTON1 btn  mr-4" type="button" data-toggle="collapse"
+                    data-target=".multi-collapse" aria-expanded="false"
+                    aria-controls="multiCollapse1 multiCollapse2">View All<i
+                        class="m-2 bi bi-chevron-down"></i></button>
+            </p>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <div class="collapse multi-collapse m-3" id="recruiters">
+                <div class="card card-body">
+                    <h3 class="title_table"> Manage all recruiter accounts</h3>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr class="header">
+                                    <th scope="col">#</th>
+                                    <th scope="col">Name</th>
+
+                                    <th scope="col">Email</th>
+                                    <th scope="col"> Phone Number</th>
+                                    <th scope="col"> Created Date</th>
+                                    <th scope="col">Last Updated</th>
+                                    <th scope="col">Status</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of recruiters; let i = index">
+                                    <th class="table_div " scope="row ">{{i+1}}</th>
+                                    <td class="table_div ">{{item.first_name}} {{item.last_name}}</td>
+                                    <td class="table_div ">{{item.email}}</td>
+                                    <td class="table_div ">{{item.phone_number}}</td>
+                                    <td class="table_div ">{{item.created_at | date:'short'}}</td>
+                                    <td class="table_div ">{{item.updated_at| date:'short' }}</td>
+                                    <td class="table_div "><i
+                                            class="bi bi-toggle2-off text-success d-flex justify-content-center"
+                                            (click)="removeUserById(item.id)"></i></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="col-12 text-center">
+        <div class="collapse multi-collapse mb-3" id="candidates">
+
+
+            <div class="card card-body">
+                <h3 class="title_table"> Manage all candidate accounts</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr class="header">
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+
+                                <th scope="col">Email</th>
+                                <th scope="col"> Phone Number</th>
+                                <th scope="col"> Created Date</th>
+                                <th scope="col">Last Updated</th>
+                                <th scope="col">Status</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of candidates; let i = index">
+                                <th class="table_div " scope="row ">{{i+1}}</th>
+                                <td class="table_div ">{{item.first_name}} {{item.last_name}}</td>
+                                <td class="table_div ">{{item.email}}</td>
+                                <td class="table_div ">{{item.phone_number}}</td>
+                                <td class="table_div ">{{item.created_at | date:'short'}}</td>
+                                <td class="table_div ">{{item.updated_at | date:'short'}}</td>
+                                <td class="table_div "><i
+                                        class="bi bi-toggle2-off text-success d-flex justify-content-center"
+                                        (click)="removeUserById(item.id)"></i></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="col-12 text-center">
+        <div class="collapse multi-collapse mb-3" id="admins">
+
+
+            <div class="card card-body">
+                <h3 class="title_table"> Manage all admin accounts</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr class="header">
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+
+                                <th scope="col">Email</th>
+                                <th scope="col"> Phone Number</th>
+                                <th scope="col"> Created Date</th>
+                                <th scope="col">Last Updated</th>
+                                <th scope="col">Status</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of admins; let i = index">
+                                <th class="table_div " scope="row ">{{i+1}}</th>
+                                <td class="table_div ">{{item.first_name}} {{item.last_name}}</td>
+                                <td class="table_div ">{{item.email}}</td>
+                                <td class="table_div ">{{item.phone_number}}</td>
+                                <td class="table_div ">{{item.created_at | date:'short'}}</td>
+                                <td class="table_div ">{{item.updated_at | date:'short'}}</td>
+                                <td class="table_div "><i
+                                        class="bi bi-toggle2-off text-success d-flex justify-content-center"
+                                        (click)="removeUserById(item.id)"></i></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    View Recruiters
+   </button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="card">
+    {{adminDetails.first_name}} {{adminDetails.last_name}}
+</div>
+<div class="col-sm col-lg-12 bg-warnning">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col lg-4 sm-12">
+
+                <div class="card text-white bg-info mb-3" style="max-width: 24rem;">
+                    <div class="card-body">
+                        <h3>Admins</h3>
+                        <h1 class="text-right">{{numAdmins}}</h1>
+<i class="bi bi-person-plus-fill" data-toggle="modal" data-target="#addAdmin"></i>
+                    </div>
+                    <div class="card-footer">
+                        <h5 class="text-center" data-toggle="modal" data-target="#addAdmin">Add <span><i
+                                    class="bi bi-plus-circle"></i></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col lg-4 sm-12">
+
+                <div class="card text-white bg-info mb-3" style="max-width: 24rem;">
+                    <div class="card-header">
+                        <h3>Candidates</h3>
+                    </div> -->
+    <!-- <div class="card-body">
+                        <h3>Candidates</h3>
+                        <h1 class="text-right">{{numCandidates}}</h1> -->
+    <!-- <i class="bi bi-person-plus-fill"></i> -->
+    <!-- </div>
+                    <div class="card-footer">
+                        <h5 class="text-center">View More <span><i class="bi bi-plus-circle"></i></span></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col lg-4 sm-12">
+                <div class="card text-white bg-info mb-3" style="max-width: 24rem;">
+                    <div class="card-header">
+                        <h3>Recruiters</h3>
+                    </div>
+                    <div class="card-body">
+                        <h3>Recruiters</h3>
+                        <h1 class="text-right">{{numRecruiters}}</h1>
+                        <i class="bi bi-person-plus-fill" "></i>
+                    </div>
+                    <div class="card-footer">
+                        <h5 class="text-center" data-toggle="modal" data-target="#recruiter">Add <span><i
+                                    class="bi bi-arrow-right-circle"></i></span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  -->
+
+    <!-- <div class="container ">
+    <div class="row"> -->
+
+    <!-- Active Accounts -->
+    <!-- <div class="col-sm">
+            <div class="card mt-3" style="width: auto;">
+                <h5 class="card-header text-primary text-center">Total Accounts {{numUsers}}</h5>
+                <div class="card-body">
+
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h3 class="mb-0">Active: {{numActiveUsers}}</h3>
+                                <button class="btn btn-primary">view</button>
+                            </div>
+                            <div class="carousel-item ">
+                                <h4>Non-Active: {{numNonActiveUsers}}</h4>
+                                <button class="btn btn-primary ">view</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div> -->
+    <!-- ** Active Accounts ** -->
+
+    <!-- ** Deactived Accounts ** -->
+    <!-- <div class="col-sm">
+            <div class="card mt-3" style="width: auto;">
+                <h5 class="card-header text-primary text-center">Deactivated Accounts</h5>
+                <div class="card-body">
+                    <h1 class="card-title text-center">{{numNonActiveUsers}}</h1>
+                    <button class="btn btn-primary" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">view</button>
+                </div>
+
+            </div>
+        </div> -->
+    <!-- ** Deactived Accounts ** -->
+    <!-- </div>
+</div> -->
+
+    <!-- Tables -->
+    <!-- <div class="accordion mt-2" id="accordionExample">
+    <div class="card">
+        <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+            aria-controls="collapseOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" type="button">
+                    <h4>Candidates</h4>
+                </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">phune Number</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Last Update</th>
+                                <th scope="col">Actions</th> -->
+    <!-- <td>
+                                        <ion-icon name="trash-outline" (click)="removeClientById(client.id)"></ion-icon>&nbsp;
+                                        <ion-icon name="pencil-outline"></ion-icon>
+                                    </td>                 -->
+    <!-- </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of candidates; let i = index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{item.first_name}}</td>
+                                <td>{{item.last_name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.phone_number}}</td>
+                                <td>{{item.created_at}}</td>
+                                <td>{{item.updated_at}}</td>
+                                <td><i class="bi bi-toggle2-off text-danger d-flex justify-content-center"
+                                        (click)="removeUserById(item.id)"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+            aria-controls="collapseTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4>Admins</h4>
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">phune Number</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Last Update</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of admins; let i = index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{item.first_name}}</td>
+                                <td>{{item.last_name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.phone_number}}</td>
+                                <td>{{item.created_date}}</td>
+                                <td>22-09-2022</td>
+                                <td><i class="bi bi-toggle2-off text-danger d-flex justify-content-center"
+                                        (click)="removeUserById(item.id)"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree"
+            aria-expanded="false" aria-controls="collapseThree">
+            <h5 class="mb-0">
+                <button class="btn btn-link collapsed" type="button">
+                    <h4>Recruiters</h4>
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">phune Number</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Last Update</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of recruiters; let i = index">
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{item.first_name}}</td>
+                                <td>{{item.last_name}}</td>
+                                <td>{{item.email}}</td>
+                                <td>{{item.phone_number}}</td>
+                                <td>{{item.created_date}}</td>
+                                <td>22-09-2022</td>
+                                <td><i class="bi bi-toggle2-off text-danger d-flex justify-content-center"
+                                        (click)="removeUserById(item.id)"></i></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+    <!-- /Tables -->
+
+
+    <!-- </div> -->
+
+
+    <!-- Modal view deactivated accounts -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Non Active Users</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">phune Number</th>
+                                        <th scope="col">Date Created</th>
+                                        <th scope="col">Last Update</th>
+                                        <th scope="col">Role</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of nonActiveUsers; let i = index">
+                                        <th scope="row">{{i+1}}</th>
+                                        <td>{{item.first_name}} </td>
+                                        <td>{{item.last_name}}</td>
+                                        <td>{{item.email}}</td>
+                                        <td>{{item.phone_number}}</td>
+                                        <td>{{item.created_at | date:'short'}}</td>
+                                        <td>{{item.updated_at | date:'short'}}</td>
+                                        <td>{{item.roles}}</td>
+                                        <td><i class="bi bi-toggle2-on text-success d-flex justify-content-center"
+                                                (click)="activateUserAccount(item.id)"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="modal fade" id="addAdmin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">
+                            <h1 class="d-inline-block intro">Add Admin</h1>
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="card container m-auto h-100">
+                            <div class="card-body">
+                                <div class=" text-center col-sm-12">
+                                    <span class="fs-1 fw-lighter create"> Create a new Admin profile</span>
+                                </div>
+
+
+                                <div class="form-group card2-body">
+                                    <input type="email" class="form-control" formControlName="email" id="inputAddress"
+                                        placeholder="enter email">
+                                </div>
+                                <div *ngIf="Form['email'].touched && Form['email'].invalid" class="alert alert-danger">
+                                    <div *ngIf="Form['email'].errors && Form['email'].errors['required']">Email is
+                                        required.
+                                    </div>
+                                    <div *ngIf="Form['email'].errors && Form['email'].errors['email']">Please, enter
+                                        valid
+                                        email address.</div>
+                                </div>
+
+                                <div class="form-group card2-body">
+                                    <input type="text" class="form-control" formControlName="first_name"
+                                        id="inputAddress" placeholder="enter name">
+                                </div>
+                                <div *ngIf="Form['first_name'].touched && Form['first_name'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="Form['first_name'].errors && Form['first_name'].errors['required']">
+                                        Firstname is required.</div>
+                                    <div *ngIf="Form['first_name'].errors && Form['first_name'].errors['first_name']">
+                                        Please, enter valid firstname.</div>
+                                </div>
+
+
+                                <div class="form-group card2-body">
+                                    <input type="text" class="form-control" formControlName="last_name"
+                                        id="inputAddress" placeholder="enter surname">
+                                </div>
+                                <div *ngIf="Form['last_name'].touched && Form['last_name'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="Form['last_name'].errors && Form['last_name'].errors['required']">
+                                        Surname is
+                                        required.</div>
+                                    <div *ngIf="Form['last_name'].errors && Form['last_name'].errors['last_name']">
+                                        Please,
+                                        enter valid surname.</div>
+                                </div>
+
+                                <div class="form-group card2-body">
+                                    <input type="text" class="form-control" formControlName="phone_number"
+                                        id="inputAddress" placeholder="cellphone">
+                                </div>
+                                <div *ngIf="Form['phone_number'].touched && Form['phone_number'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="Form['phone_number'].errors && Form['phone_number'].errors['required']">
+                                        Phone number is required.</div>
+                                    <div
+                                        *ngIf="Form['phone_number'].errors && Form['phone_number'].errors['phone_number']">
+                                        Please, enter valid phone number.</div>
+                                </div>
+
+                                <div class="form-check mb-4 mt-3">
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="checkbox" id="inlineRadio1"
+                                            value="checkbox" formControlName="checkbox">
+                                        <label class="form-check-label" for="inlineRadio1">Agree to Terms and
+                                            Conditions</label>
+                                    </div>
+                                    <div *ngIf="Form['checkbox'].touched && Form['checkbox'].invalid"
+                                        class="alert alert-danger">
+                                        <div *ngIf="Form['checkbox'].errors && Form['checkbox'].errors['required']">
+                                            checkbox
+                                            has to be selected in order to submit form.</div>
+                                        <div *ngIf="Form['checkbox'].errors && Form['checkbox'].errors['checkbox']">
+                                            Please,
+                                            select the checkbox.</div>
+                                    </div>
+                                    <br>
+                                    <div *ngIf="spinnerState" class="d-flex justify-content-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger mt-3 " data-dismiss="modal">Close</button>
+                        <button type="submit" [disabled]="registerForm.invalid"
+                            class="btn btn-primary mt-3 ">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="recruiter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <form [formGroup]="registerForm" (ngSubmit)="registerRecruiter()">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Recruiter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card container m-auto h-100">
+                            <div class="card-body">
+                                <div class=" text-center col-sm-12">
+                                    <span class="fs-1 fw-lighter create"> Create a new recruiter profile</span>
+                                </div>
+
+
+                                <div class="form-group card2-body">
+                                    <input type="email" class="form-control" formControlName="email" id="inputAddress"
+                                        placeholder="enter email">
+                                </div>
+                                <div *ngIf="Form['email'].touched && Form['email'].invalid" class="alert alert-danger">
+                                    <div *ngIf="Form['email'].errors && Form['email'].errors['required']">Email is
+                                        required.
+                                    </div>
+                                    <div *ngIf="Form['email'].errors && Form['email'].errors['email']">Please, enter
+                                        valid
+                                        email address.</div>
+                                </div>
+
+                                <div class="form-group card2-body">
+                                    <input type="text" class="form-control" formControlName="first_name"
+                                        id="inputAddress" placeholder="enter name">
+                                </div>
+                                <div *ngIf="Form['first_name'].touched && Form['first_name'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="Form['first_name'].errors && Form['first_name'].errors['required']">
+                                        Firstname is required.</div>
+                                    <div *ngIf="Form['first_name'].errors && Form['first_name'].errors['first_name']">
+                                        Please, enter valid firstname.</div>
+                                </div>
+
+
+                                <div class="form-group card2-body">
+                                    <input type="text" class="form-control" formControlName="last_name"
+                                        id="inputAddress" placeholder="enter surname">
+                                </div>
+                                <div *ngIf="Form['last_name'].touched && Form['last_name'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="Form['last_name'].errors && Form['last_name'].errors['required']">
+                                        Surname is
+                                        required.</div>
+                                    <div *ngIf="Form['last_name'].errors && Form['last_name'].errors['last_name']">
+                                        Please,
+                                        enter valid surname.</div>
+                                </div>
+
+                                <div class="form-group card2-body">
+                                    <input type="text" class="form-control" formControlName="phone_number"
+                                        id="inputAddress" placeholder="cellphone">
+                                </div>
+                                <div *ngIf="Form['phone_number'].touched && Form['phone_number'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="Form['phone_number'].errors && Form['phone_number'].errors['required']">
+                                        Phone number is required.</div>
+                                    <div
+                                        *ngIf="Form['phone_number'].errors && Form['phone_number'].errors['phone_number']">
+                                        Please, enter valid phone number.</div>
+                                </div>
+
+                                <div class="form-check mb-4 mt-3">
+
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="checkbox" id="inlineRadio1"
+                                            value="checkbox" formControlName="checkbox">
+                                        <label class="form-check-label" for="inlineRadio1">Agree to Terms and
+                                            Conditions</label>
+                                    </div>
+                                    <div *ngIf="Form['checkbox'].touched && Form['checkbox'].invalid"
+                                        class="alert alert-danger">
+                                        <div *ngIf="Form['checkbox'].errors && Form['checkbox'].errors['required']">
+                                            checkbox
+                                            has to be selected in order to submit form.</div>
+                                        <div *ngIf="Form['checkbox'].errors && Form['checkbox'].errors['checkbox']">
+                                            Please,
+                                            select the checkbox.</div>
+                                    </div>
+                                    <br>
+                                    <div *ngIf="spinnerState" class="d-flex justify-content-center">
+                                        <div class="spinner-border" role="status">
+                                            <span class="sr-only"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger mt-3 " data-dismiss="modal">Close</button>
+                        <button type="submit" [disabled]="registerForm.invalid"
+                            class="btn btn-primary mt-3 ">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+
+<h5 class="text-center" data-toggle="modal" data-target="#recruiter">Update Password <span><i
+    class="bi bi-plus-circle"></i></span></h5>
+  
+  
+  
+    <div class="modal fade" id="recruiter" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <form [formGroup]="updatePassword" (ngSubmit)="updateRecruiterPassword()">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Update Password</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="card container m-auto h-100">
+                              <div class="card-body">
+                                  <!-- <div class=" text-center col-sm-12">
+                                      <span class="fs-1 fw-lighter create"> Create a new recruiter profile</span>
+                                  </div> -->
+  
+  
+                                  <div class="form-group card2-body">
+                                      <input type="password" class="form-control" formControlName="password" id="inputAddress"
+                                          placeholder="enter old password">
+                                  </div>
+                                  <div *ngIf="form['password'].touched && form['password'].invalid" class="alert alert-danger">
+                                      <div *ngIf="form['password'].errors && form['password'].errors['required']">Old password is
+                                          required.
+                                      </div>
+                                      <div *ngIf="form['password'].errors && form['password'].errors['password']">Please, enter
+                                          valid
+                                          passord address.</div>
+                                  </div>
+  
+                                  <div class="form-group card2-body">
+                                      <input type="password" class="form-control" formControlName="newPassword"
+                                          id="inputAddress" placeholder="enter New password">
+                                  </div>
+                                  <div *ngIf="form['newPassword'].touched && form['newPassword'].invalid"
+                                      class="alert alert-danger">
+                                      <div *ngIf="form['newPassword'].errors && form['newPassword'].errors['required']">
+                                          New password is required.</div>
+                                      <div *ngIf="form['newPassword'].errors && form['newPassword'].errors['newPassword']">
+                                          Please, enter valid password.</div>
+                                  </div>
+  
+  
+                                  <div class="form-group card2-body">
+                                      <input type="password" class="form-control" formControlName="compareNewPassword"
+                                          id="inputAddress" placeholder="enter new password again">
+                                  </div>
+                                  <div *ngIf="form['compareNewPassword'].touched && form['compareNewPassword'].invalid"
+                                      class="alert alert-danger">
+                                      <div *ngIf="form['compareNewPassword'].errors && form['compareNewPassword'].errors['required']">
+                                          New password  is
+                                          required.</div>
+                                      <div *ngIf="form['compareNewPassword'].errors && form['compareNewPassword'].errors['compareNewPassword']">
+                                          Please,
+                                          enter valid password.</div>
+                                  </div>
+
+
+                                  <div class="form-group card2-body">
+                                    <input type="email" class="form-control" formControlName="email" [(ngModel)]="adminDetails.email" hidden
+                                        id="inputAddress" placeholder="enter eamil address">
+                                </div>
+                                <div *ngIf="form['email'].touched && form['email'].invalid"
+                                    class="alert alert-danger">
+                                    <div *ngIf="form['email'].errors && form['email'].errors['required']">
+                                        New email  is
+                                        required.</div>
+                                    <div *ngIf="form['email'].errors && form['email'].errors['email']">
+                                        Please,
+                                        enter valid email.</div>
+                                </div>
+  
+                                  
+  
+                                  
+                              </div>
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-danger mt-3 " data-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary mt-3 ">Save</button>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  
+  
+  
+  <!-- end of candidate modal -->>
+ 
